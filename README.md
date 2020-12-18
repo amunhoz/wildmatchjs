@@ -39,4 +39,5 @@ WILDMATCH insert 20  milliseconds
 WILDMATCH match 7209  milliseconds
 ```
 * Not faster than matchit, but is a good example on how to create classes with neon binding
+
 Feel free to sugest optmizations.
