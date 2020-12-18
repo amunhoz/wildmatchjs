@@ -1,0 +1,24 @@
+{
+  "name": "wildmatchjs",
+  "version": "0.1.0",
+  "description": "Rust Wildmatch bindings for nodejs",
+  "main": "lib/index.js",
+  "author": "https://github.com/amunhoz",
+  "license": "MIT",
+  "dependencies": {
+    "neon-cli": "^0.6.0"
+  },
+  "scripts": {
+    "install": "neon build --release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amunhoz/wildmatchjs.git"
+  },
+  "keywords": [
+    "match",
+    "wildcard",
+    "rust",
+    "wildmatch"
+  ]
+}

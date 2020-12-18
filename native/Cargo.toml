@@ -1,0 +1,19 @@
+[package]
+name = "rust-wildmatch"
+version = "0.1.0"
+authors = ["ivuser"]
+license = "MIT"
+build = "build.rs"
+edition = "2018"
+exclude = ["artifacts.json", "index.node"]
+
+[lib]
+name = "rust_wildmatch"
+crate-type = ["cdylib"]
+
+[build-dependencies]
+neon-build = "0.6.0"
+
+[dependencies]
+neon = "0.6.0"
+wildmatch = "1.0.12"
