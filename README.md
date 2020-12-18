@@ -14,10 +14,13 @@ match.insert("/main/*")
 match.insert("/mainx/*")
 match.insert("/mainy/*")
 
-let matches =match.matches("/main/lalala")
-console.log(matches[0])
+let matches = match.matches("/main/lalala")
+
+//return one or more ocorrencies
+console.log(matches[0]) // "/main/*"
 
 ```
+
 build using NEON
 see: [neon docs](https://neon-bindings.com/docs/electron-apps/)
 
