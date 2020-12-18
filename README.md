@@ -32,9 +32,10 @@ see: [neon docs](https://neon-bindings.com/docs/electron-apps/)
 - [Rust & Cargo](https://www.rust-lang.org/learn/get-started)
 
 ## Benchmark 10000 ops
+```
 MATCHIT parse 19  milliseconds
 MATCHIT match 2460  milliseconds
 WILDMATCH insert 20  milliseconds
 WILDMATCH match 7209  milliseconds
-
+```
 * Not faster than matchit, but is a good example on how to create classes with neon binding
