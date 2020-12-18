@@ -65,7 +65,16 @@ declare_types! {
     }
   }
   
+fn isMatch(mut cx: FunctionContext) -> JsResult<JsBoolean> {
+    let item = cx.argument::<JsString>(0)?;        
+    let pattern = cx.argument::<JsString>(1)?; 
+    let m = WildMatch::new(&pattern.value());
+    
+    Ok( cx.boolean( m.is_match( &item.value() ) ) )
+}
+
 register_module!(mut m, {
+    m.export_function("isMatch", isMatch)?;
     m.export_class::<JsWMatch>("WildMatch")?;
     Ok(())
 });

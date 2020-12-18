@@ -1,6 +1,6 @@
 {
   "name": "wildmatchjs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rust Wildmatch bindings for nodejs",
   "main": "lib/index.js",
   "author": "https://github.com/amunhoz",
@@ -20,5 +20,8 @@
     "wildcard",
     "rust",
     "wildmatch"
-  ]
+  ],
+  "devDependencies": {
+    "matchit": "^1.1.0"
+  }
 }
