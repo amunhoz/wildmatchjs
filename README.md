@@ -3,8 +3,11 @@
 
 Is [wildmatch](https://github.com/becheran/wildmatch)'s nodejs binding
 
-## Usage
 
+## Usage
+```
+npm i --save wildmatchjs
+```
 ```js
 const WildMatch = require('wildmatchjs');
 
