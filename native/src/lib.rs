@@ -42,15 +42,22 @@ declare_types! {
         Ok(JsNull::new().upcast())  
       }      
   
-      method matches(mut cx){
+      method matchAll(mut cx){
         let search = cx.argument::<JsString>(0)?;        
+        let search_s = &search.value();      
         let mut this = cx.this();
         let guard = cx.lock();    
         let v = {          
           let mut matcher = this.borrow_mut(&guard);
-          let vx = matcher.findMatch(&search.value());
-          vx
+          let mut vX: Vec<String> = Vec::new();              
+          for (key, wmatch) in &matcher.matches {
+            if wmatch.is_match(search_s) {                   
+                vX.push(key.clone());
+            }            
+          }                 
+          vX          
         };              
+        //convert o array
         let result: Handle<JsArray> = JsArray::new(&mut cx, v.len() as u32); 
         for (i, obj) in v.iter().enumerate() {
           let js_string = cx.string(obj);
@@ -59,6 +66,26 @@ declare_types! {
 
         Ok(result.upcast())  
       }
+
+      method matchOne(mut cx){
+        let search = cx.argument::<JsString>(0)?;  
+        let search_s = &search.value();      
+        let mut this = cx.this();
+        let guard = cx.lock();    
+        let matched = {          
+          let mut matcher = this.borrow_mut(&guard);
+          let mut s: String = "".to_string();
+          for (key, wmatch) in &matcher.matches {
+            if wmatch.is_match(search_s) {                   
+                s = key.clone();
+                break;
+            }            
+          }           
+          s
+        };              
+        Ok(JsString::new(&mut cx, matched).upcast())          
+      }
+
       method panic(_) {
         panic!("User.prototype.panic")
       }

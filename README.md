@@ -14,11 +14,13 @@ match.insert("/main/*")
 match.insert("/mainx/*")
 match.insert("/mainy/*")
 
-let matches = match.matches("/main/lalala")
+let matches =match.matcheOne("/main/lalala/main")
+console.log(matches) // "/main/*"
 
-//return one or more ocorrencies
-console.log(matches[0]) // "/main/*"
+let matchesAll =match.matcheAll("/main/lalala/main")
+console.log(matchesAll[0]) // "/main/*"
 
+//single function
 const {isMatch} = require('../native');
 console.log(isMatch("/main/lalala", "/main/*")) // true
 
@@ -33,6 +35,13 @@ see: [neon docs](https://neon-bindings.com/docs/electron-apps/)
 
 ## Benchmark 10000 ops
 ```
+Using matchOne
+MATCHIT parse 23  milliseconds
+MATCHIT match 2362  milliseconds
+WILDMATCH insert 21  milliseconds
+WILDMATCH match 3073  milliseconds
+
+Using matchAll
 MATCHIT parse 19  milliseconds
 MATCHIT match 2460  milliseconds
 WILDMATCH insert 20  milliseconds

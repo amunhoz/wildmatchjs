@@ -24,7 +24,7 @@ console.log("WILDMATCH", "insert",  Math.abs(new Date() - datex), " milliseconds
 datex = new Date()
 
 for (i = 0; i < count; i++) {
-     let x = wmatch.matches(`/test/i${i}/${i}`)    
+     let x = wmatch.matchOne(`/test/i${i}/${i}`)    
 }
 console.log("WILDMATCH", "match",  Math.abs(new Date() - datex), " milliseconds")
 
