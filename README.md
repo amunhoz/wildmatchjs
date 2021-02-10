@@ -14,10 +14,10 @@ match.insert("/main/*")
 match.insert("/mainx/*")
 match.insert("/mainy/*")
 
-let matches =match.matcheOne("/main/lalala/main")
+let matches =match.matchOne("/main/lalala/main")
 console.log(matches) // "/main/*"
 
-let matchesAll =match.matcheAll("/main/lalala/main")
+let matchesAll =match.matchAll("/main/lalala/main")
 console.log(matchesAll[0]) // "/main/*"
 
 //single function
