@@ -1,6 +1,6 @@
 {
   "name": "wildmatchjs",
-  "version": "0.1.4",
+  "version": "0.1.8",
   "description": "Rust Wildmatch bindings for nodejs",
   "main": "lib/index.js",
   "author": "https://github.com/amunhoz",
@@ -9,7 +9,8 @@
     "neon-cli": "^0.6.0"
   },
   "scripts": {
-    "install": "install.sh"
+    "install": "neon build --release",
+    "postinstall": "rm ./native/target -R"
   },
   "repository": {
     "type": "git",
