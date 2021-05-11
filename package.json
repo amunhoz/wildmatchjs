@@ -9,7 +9,7 @@
     "neon-cli": "^0.6.0"
   },
   "scripts": {
-    "install": "neon build --release"
+    "install": "install.sh"
   },
   "repository": {
     "type": "git",
